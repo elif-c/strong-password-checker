@@ -1,26 +1,28 @@
 while True:
     print("Strong Password Checker")
     password = input("Please enter your password: ")
-    conditions = []
+    conditions = {}
 
     if len(password) > 8:
-        conditions.append(True)
+        conditions["length"] = True
     else:
-        conditions.append(False)
+        conditions["length"] = False
 
     contains_digit = False
     for i in password:
         if i.isdigit():
             contains_digit = True
-    conditions.append(contains_digit)
+    conditions["contains_digit"] = contains_digit
 
     contains_uppercase = False
     for i in password:
         if i.isupper():
             contains_uppercase = True
-    conditions.append(contains_uppercase)
+    conditions["contains_uppercase"] = contains_uppercase
 
-    if all(conditions):
+    # print(conditions)
+
+    if all(conditions.values()):
         print("Strong password")
     else:
         print("Weak password")
@@ -28,4 +30,5 @@ while True:
     if user_input.lower() == "y":
         break
     continue
+
 print("Bye ^^")
