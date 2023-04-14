@@ -1,6 +1,4 @@
-while True:
-    print("Strong Password Checker")
-    password = input("Please enter your password: ")
+def check_password_strength(password):
     conditions = {}
 
     if len(password) > 8:
@@ -26,6 +24,13 @@ while True:
         print("Strong password")
     else:
         print("Weak password")
+
+
+while True:
+    print("Strong Password Checker")
+
+    check_password_strength(input("Please enter your password: "))
+
     user_input = input("Would you like to exit? (y/n): ")
     if user_input.lower() == "y":
         break
